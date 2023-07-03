@@ -31,7 +31,6 @@ function checkLocalStorage(){
     for(let i=0; i < playerList.length; i++){
         allPlayers.push(playerList[i])
     }
-
 }
 
 function initialisePlayers(){
