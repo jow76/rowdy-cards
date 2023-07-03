@@ -4,6 +4,8 @@ const nextContainer = document.getElementById("nextButton")
 const cardNums = ["001","002","003","004","005"]
 const allCards = []
 const image1 = document.getElementById("image1")
+let diceImage = document.getElementById("diceImage")
+const rollButton = document.getElementById("diceButton")
 const graveyard = []
 const drawn = []
 let prev = graveyard.length
@@ -14,6 +16,7 @@ let zVal=0
 let delY = 0;
 const allPlayers = []
 let turn = -1;
+let rolled = [];
 countCards();
 checkLocalStorage();
 
@@ -182,6 +185,14 @@ function xyz(){
     delY = 0;
 }
 
+function diceRoll(){
+    diceImage.style.animation = "roll 0.2s"
+    rolled = []
+    const diceRoll = Math.floor(Math.random()*6) + 1
+    diceImage.src=`dice/${diceRoll}.png`;
+}
+
 xyz();
 
 nextContainer.addEventListener("click", displayNext)
+rollButton.addEventListener("click", diceRoll)
