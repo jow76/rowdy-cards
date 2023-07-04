@@ -327,6 +327,7 @@ button{
     display: block;
     width: 10%;
     height: auto;
+    min-width: 70px;
 }
 
 section{
@@ -424,6 +425,7 @@ section img:hover{
     display: block;
     width: 10%;
     height: auto;
+    min-width: 70px;
 }
 
 #rules{
