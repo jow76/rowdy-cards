@@ -28,9 +28,12 @@ function setLocalStorage(){
 
 function checkLocalStorage(){
     const playerList = JSON.parse(localStorage.getItem("players"))
-    for(let i=0; i < playerList.length; i++){
-        allPlayers.push(playerList[i])
+    if(playerList != null){
+        for(let i=0; i < playerList.length; i++){
+            allPlayers.push(playerList[i])
+        }
     }
+    else{}
 }
 
 function initialisePlayers(){

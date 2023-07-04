@@ -275,10 +275,11 @@ button{
     z-index: 1;
     text-align: left;
     margin: 0 1rem 0 0;
-    padding: 1rem;
+    padding: 1rem 1rem 0;
 }
 
 #displayCurrentPlayer h4{
+    font-size: 3rem;
     display: flex;
     justify-content: left;
 }
@@ -286,6 +287,7 @@ button{
 #displayCurrentPlayer li{
     display: flex;
     justify-content: left;
+    font-size: 2rem;
 }
 
 #houseRules{
