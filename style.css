@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 header{
     background-color: black;
     display: block;
@@ -291,7 +295,7 @@ button{
 }
 
 #houseRules p{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0 auto;
     padding: 1rem 0;
     max-width: 800px;
@@ -303,7 +307,7 @@ button{
 
 #houseRules li{
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0 auto;
     padding: 1rem 0;
     max-width: 800px;
@@ -430,4 +434,26 @@ section img:hover{
 
 #rules{
     padding-top: 12rem;
+}
+
+#newPlayerNotice{
+    display: inline-block;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    width:100%
+}
+
+#newPlayerNotice p{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#newPlayerNotice h3{
+    margin: 0;
 }
