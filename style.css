@@ -125,6 +125,7 @@ a:hover, a:active{
 main{
     height: 100%;
     background-color: rgb(4, 83, 37);
+    min-height:100vh;
 }
 
 div{
@@ -481,12 +482,12 @@ section img:hover{
     display: inline;
     margin: 0 auto;
     padding: 0;
-    max-width: 700px;
+    max-width: 800px;
 }
 
 .aboutMain h3{
     padding-top: 2rem;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -496,12 +497,12 @@ section img:hover{
     color: black;
     font-size: 1.2rem;
     font-weight: 100;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .aboutMain ol{
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     display: block;
     list-style: decimal;
@@ -560,4 +561,42 @@ section img:hover{
         transform:translateX(0vb);
         opacity:1;
     }
+}
+
+#chicken{
+    width: 280px;
+    position:absolute;
+    right: 5rem;
+    margin: 5rem 0 0 0;
+}
+
+#chickenP{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    max-width: 700px;
+    position:absolute;
+    right: 5rem;
+    margin: 33rem 0 0 10rem;
+}
+
+#jow{
+    width: 280px;
+    position:absolute;
+    left: 5rem;
+    margin: 5rem 0 0 0;
+}
+
+#jowP{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    max-width: 700px;
+    position:absolute;
+    left: 5rem;
+    margin: 29rem 0 0 1rem;
 }
