@@ -65,64 +65,70 @@ function handleClick(event){
             image1.alt = "Out of cards! Refresh to keep playing!"
         }
         else{
-        let card = randNum()
-        while(drawn.includes(card)){
-            card = randNum()
-        }
-        if(delY === 1){
-            yVal = 0;
-            xyz()
-        }
-        else{}
-        card++
-        if(card == "202" || card == "203" || card == "204" || card == "205" || card == "206" || card == "207" || card == "208" || card == "209" || card == "210" || card == "211"){
-            yVal+=2;
-            xyz()
-        }
-        else if(card == "212" || card == "213" || card == "214" || card == "215" || card == "216"){
-            yVal++;
-            xyz()
-        }
-        else if(card == "217" || card == "218"){
-            yVal*=2;
-            xyz()
-        }
-        else if(card == "219" || card == "220" || card == "221"){
-            delY = 1;
-        }
-        else if(card == "222" || card == "223" || card == "224" || card == "225" || card == "226" || card == "227" || card == "228" || card == "229" || card == "230" || card == "231"){
-            xVal++;
-            xyz()
-        }
-        else if(card=="232" || card == "233"){
-            xVal*=2;
-            xyz()
-        }
-        else{}
-        card--;
-        image1.src = allCards[card].src;
-        image1.alt = allCards[card].number;
-        new DeadCard(image1.alt, image1.src)
-        countCards();
-        backCount=1;
-        drawn.push(card)
-        if(turn < playerLoop){
-            turn++
-        }
-        else{
-            turn = 0
-        }
-        const shownList = document.getElementById("gamePlayers")
-        const li = document.getElementById("li")
-        if(shownList.firstChildElement == null){
-            updateList();
-        }
-        else{
-            clear(shownList)
-            updateList();
+            image1.classList.add("next")
+            let card = randNum()
+            while(drawn.includes(card)){
+                card = randNum()
+            }
+            window.setTimeout(function() {
+                image1.classList.remove("next")
+            }, 500)
+            if(delY === 1){
+                yVal = 0;
+                xyz()
+            }
+            else{}
+            card++
+            window.setTimeout(function(){
+                if(card == "202" || card == "203" || card == "204" || card == "205" || card == "206" || card == "207" || card == "208" || card == "209" || card == "210" || card == "211"){
+                    yVal+=2;
+                    xyz()
+                }
+                else if(card == "212" || card == "213" || card == "214" || card == "215" || card == "216"){
+                    yVal++;
+                    xyz()
+                }
+                else if(card == "217" || card == "218"){
+                    yVal*=2;
+                    xyz()
+                }
+                else if(card == "219" || card == "220" || card == "221"){
+                    delY = 1;
+                }
+                else if(card == "222" || card == "223" || card == "224" || card == "225" || card == "226" || card == "227" || card == "228" || card == "229" || card == "230" || card == "231"){
+                    xVal++;
+                    xyz()
+                }
+                else if(card=="232" || card == "233"){
+                    xVal*=2;
+                    xyz()
+                }
+                else{}
+            },500)
+            card--;
+            image1.src = allCards[card].src;
+            image1.alt = allCards[card].number;
+            new DeadCard(image1.alt, image1.src)
+            countCards();
+            backCount=1;
+            drawn.push(card)
+            if(turn < playerLoop){
+                turn++
+            }
+            else{
+                turn = 0
+            }
+            const shownList = document.getElementById("gamePlayers")
+            const li = document.getElementById("li")
+            if(shownList.firstChildElement == null){
+                updateList();
+            }
+            else{
+                clear(shownList)
+                updateList();
+            }
         }
     }
-}
 }
 
 function randNum(){
@@ -149,11 +155,17 @@ function displayPrevious(){
         alert("No more previous cards!")
     }
     else{
+        image1.classList.add("prev")
         backCount +=1;
         let i = graveyard.length;
         i-=backCount;
-        image1.src=graveyard[i].src;
-        image1.alt=graveyard[i].number;
+        window.setTimeout(function() {
+            image1.src=graveyard[i].src;
+            image1.alt=graveyard[i].number;
+        }, 250)
+        window.setTimeout(function() {
+            image1.classList.remove("prev")
+        }, 500)
     }
 
 }
@@ -172,8 +184,14 @@ function displayNext(){
         handleClick(event)
     }
         else{
-            image1.src=graveyard[i].src;
-            image1.alt=graveyard[i].number;
+            image1.classList.add("next")
+            window.setTimeout(function() {
+                image1.src=graveyard[i].src;
+                image1.alt=graveyard[i].number;
+            }, 250)
+            window.setTimeout(function() {
+                image1.classList.remove("next")
+            }, 500)
         }
     }
 }

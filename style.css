@@ -124,7 +124,7 @@ a:hover, a:active{
 
 main{
     height: 100%;
-    background-color: darkgreen;
+    background-color: rgb(4, 83, 37);
 }
 
 div{
@@ -164,7 +164,7 @@ form{
     margin: 0 auto;
     padding: 1rem;
     border: 1px solid black;
-    background-color: green;
+    background-color: darkgreen;
     max-width: 40%;
     min-width: fit-content;
     font-size: 1.3rem;
@@ -245,6 +245,7 @@ button{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width:100vb;
     text-align: left;
+    user-select: none;
 }
 
 #rules p{
@@ -253,7 +254,7 @@ button{
     background-color: transparent;
     color:black;
     font-size: 1.1rem;
-    user-select: text;
+    user-select: none;
 }
 
 #xyz{
@@ -270,6 +271,7 @@ button{
     flex-direction: column;
     justify-content: space-between;
     margin: 1rem;
+    user-select: none;
 }
 
 #displayCurrentPlayer{
@@ -281,6 +283,7 @@ button{
     text-align: left;
     margin: 0 1rem 0 0;
     padding: 1rem 1rem 0;
+    user-select: none;
 }
 
 #displayCurrentPlayer h4{
@@ -339,6 +342,10 @@ button{
     width: 10%;
     height: auto;
     min-width: 70px;
+}
+
+#diceButton img:hover{
+    width:20%;
 }
 
 section{
@@ -439,8 +446,12 @@ section img:hover{
     min-width: 70px;
 }
 
+#coinFlip img:hover{
+    width:20%;
+}
+
 #rules{
-    padding-top: 12rem;
+    padding-top: 17rem;
 }
 
 #newPlayerNotice{
@@ -498,7 +509,7 @@ section img:hover{
 }
 
 .aboutMain li{
-    font-size: 1rem;
+    font-size: 1.1rem;
     display: block;
     list-style: decimal;
 }
@@ -511,4 +522,42 @@ section img:hover{
 
 .aboutMain a:hover{
     color: rgb(0, 153, 255);
+}
+
+.next{
+    animation: next 0.5s linear;
+}
+
+@keyframes next{
+    45%{
+        transform:translateX(-400vb);
+        opacity:0;
+    }
+    55%{
+        transform:translateX(400vb);
+        opacity:0;
+    }
+    100%{
+        transform:translateX(0vb);
+        opacity:1;
+    }
+}
+
+.prev{
+    animation: prev 0.5s linear;
+}
+
+@keyframes prev{
+    45%{
+        transform:translateX(400vb);
+        opacity:0;
+    }
+    55%{
+        transform:translateX(-400vb);
+        opacity:0;
+    }
+    100%{
+        transform:translateX(0vb);
+        opacity:1;
+    }
 }
