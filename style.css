@@ -464,3 +464,51 @@ section img:hover{
 #newPlayerNotice h3{
     margin: 0;
 }
+
+.aboutMain{
+    width: 100%;
+    display: inline;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 700px;
+}
+
+.aboutMain h3{
+    padding-top: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.aboutMain p{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.aboutMain ol{
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+    list-style: decimal;
+    padding-left: 3rem;
+}
+
+.aboutMain li{
+    font-size: 1rem;
+    display: block;
+    list-style: decimal;
+}
+
+.aboutMain a{
+    background-color: transparent;
+    padding: 0;
+    color: white;
+}
+
+.aboutMain a:hover{
+    color: rgb(0, 153, 255);
+}
