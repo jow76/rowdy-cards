@@ -80,26 +80,26 @@ function handleClick(event){
             else{}
             card++
             window.setTimeout(function(){
-                if(card == "202" || card == "203" || card == "204" || card == "205" || card == "206" || card == "207" || card == "208" || card == "209" || card == "210" || card == "211"){
+                if(card == "203" || card == "204" || card == "205" || card == "206" || card == "207" || card == "208" || card == "209" || card == "210" || card == "202" || card == "201"){
                     yVal+=2;
                     xyz()
                 }
-                else if(card == "212" || card == "213" || card == "214" || card == "215" || card == "216"){
+                else if(card == "212" || card == "214" || card == "215" || card == "213" || card == "211"){
                     yVal++;
                     xyz()
                 }
-                else if(card == "217" || card == "218"){
+                else if(card == "217" || card == "216"){
                     yVal*=2;
                     xyz()
                 }
-                else if(card == "219" || card == "220" || card == "221"){
+                else if(card == "220" || card == "219" || card == "218"){
                     delY = 1;
                 }
-                else if(card == "222" || card == "223" || card == "224" || card == "225" || card == "226" || card == "227" || card == "228" || card == "229" || card == "230" || card == "231"){
+                else if(card == "221" || card == "223" || card == "224" || card == "225" || card == "226" || card == "227" || card == "228" || card == "229" || card == "230" || card == "222"){
                     xVal++;
                     xyz()
                 }
-                else if(card=="232" || card == "233"){
+                else if(card=="232" || card == "231"){
                     xVal*=2;
                     xyz()
                 }
