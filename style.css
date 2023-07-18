@@ -221,10 +221,15 @@ button{
 }
 
 #clearPlayers{
+    color:white;
     margin: 1rem auto;
     font-size: 1.1rem;
     font-weight: 700;
-    background-color:darkred;
+    background-color:rgb(175, 6, 0);
+}
+
+#clearPlayers:hover{
+    background-color: rgb(255, 0, 0);
 }
 
 #startButton{
