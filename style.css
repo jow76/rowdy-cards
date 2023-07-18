@@ -222,6 +222,15 @@ button{
 
 #clearPlayers{
     margin: 1rem auto;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color:darkred;
+}
+
+#startButton{
+    font-size: 2rem;
+    font-weight: 700;
+    border: solid 3px black;
 }
 
 #drawButton:hover{
@@ -605,4 +614,52 @@ section img:hover{
     position:absolute;
     left: 5rem;
     margin: 29rem 0 0 1rem;
+}
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.7rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.indexSection{
+    padding-top: 3rem;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+.indexDiv{
+    padding-top: 1rem;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.indexDiv p{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    border-radius: 0;
+}
+
+.indexSection a{
+    background-color: transparent;
+    padding: 0;
+    color: white;
+}
+
+.indexSection a:hover{
+    color: rgb(0, 153, 255);
+}
+
+#cabbitImg{
+    display: block;
+    margin: 0 auto;
+    width:200px;
+
 }

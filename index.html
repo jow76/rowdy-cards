@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rowdy Cards</title>
-    <meta name="description" content="Start the night off right with Rowdy Cards!">
+    <title>Rowdy Boys</title>
+    <meta name="description" content="Rowdy Boys home page">
     <link rel="icon" type="image/x-icon" href="images/ROWDYBOYS.png">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
@@ -13,50 +13,32 @@
     <header>
         <section id="headerTitle">
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
-            <h1>ROWDY CARDS</h1>
+            <h1>ROWDY BOYS</h1>
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
         </section>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="game.html">Play</a></li>
+                <li><a href="start-game.html">Rowdy Cards</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div id="formContainer">
-            <form id="playerForm">
-                <fieldset>
-                    <legend>Add New Players</legend>
-                    <label for="playerNameInput">Player Name</label>
-                    <input type="text" name="playerName" id="playerNameInput">
-                </fieldset>
-                <button type="submit" id="submitButton">Add Player</button>
-            </form>
-        </div>
-        <div>
-            <h3>Players:</h3>
-        </div>
-        <div id="displayPlayers">
-            <ul id="playersUl"></ul>
-        </div>
-        <div>
-            <button id="clearPlayers" onclick="clearPlayers()">Clear all players</button>
-        </div>
-        <section id="houseRules">
-            <h3>House Rules</h3>
-            <p>Generally, this is a drinking game designed for fun - so feel free to bend or ignore the rules as you see fit. These rules are just guidelines based off what we do when things don't go smoothly:</p>
-            <ol>
-                <li>1. If you have to drink a decimal number, round it up. You're here to get drunk, after all.</li>
-                <li>2. If a vote ends with a draw, it can be decided with a coin flip.</li>
-                <li>3. An empty drink is just a full drink that has not been poured yet, as said in the Bible probably. Therefore, if you have to down an empty drink, you must pour a whole drink first.</li>
-                <li>4. It's perfectly fine (even encouraged) to drink between turns.</li>
-            </ol>
+        <section class="indexSection">
+            <div class="indexDiv">
+                <h2>Welcome, brother</h2>
+                <p>This is the placeholder home page for the WIP Rowdy Boys site! Currently, there is a functional drinking game called Rowdy Cards which you can play <a href="game1.html">HERE</a>!</p>
+                <p>There's more to come, but I barely know anything about web development yet, so bare with.</p>
+            </div>
+            <div class="indexDiv">
+                <h3>About Us</h3>
+                <p>I don't really know what Rowdy Boys is so here's a picture of a cabbit instead:</p>
+            </div>
         </section>
+        <img id="cabbitImg" src="images/cabbit.jpg" alt="An awesome Cabbit">
     </main>
     <footer>
         <p>&#169 Rowdy Boys 2023</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
