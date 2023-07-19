@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rowdy Boys</title>
+    <title>Rowdy Boys Power Hour</title>
     <meta name="description" content="Rowdy Boys home page">
     <link rel="icon" type="image/x-icon" href="images/ROWDYBOYS.png">
     <link rel="stylesheet" href="reset.css">
@@ -25,21 +25,27 @@
         </nav>
     </header>
     <main>
-        <section class="indexSection">
-            <div class="indexDiv">
-                <h2>Welcome, brother</h2>
-                <p>This is the placeholder home page for the WIP Rowdy Boys site! Currently, there is a functional drinking game called Rowdy Cards which you can play <a href="start-game.html">HERE</a>!</p>
-                <p>There's more to come, but I barely know anything about web development yet, so bare with.</p>
+        <div>
+            <h3>Power Hour</h3>
+        </div>
+        <section id="phSection">
+            <div class="timerContainer">
+                <div id="minsA" class="timer">6</div>
+                <div id="minsB" class="timer">0</div>
             </div>
-            <div class="indexDiv">
-                <h3>About Us</h3>
-                <p>I don't really know what Rowdy Boys is so here's a picture of a cabbit instead:</p>
+            <div class="timerContainer">
+                <div id="secsA" class="timer">0</div>
+                <div id="secsB" class="timer">0</div>
             </div>
+            <p id="endMsg"></p>
         </section>
-        <img id="cabbitImg" src="images/cabbit.jpg" alt="An awesome Cabbit">
+        <section>
+            <button id="timerStart">Start Timer</button>
+        </section>
     </main>
     <footer>
         <p>&#169 Rowdy Boys 2023</p>
     </footer>
+    <script src="power-hour.js"></script>
 </body>
 </html>
