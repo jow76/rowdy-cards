@@ -697,3 +697,10 @@ h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding-top:0.25rem;
 }
+
+#phMain button{
+    margin: 1rem;
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}

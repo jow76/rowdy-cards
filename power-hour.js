@@ -1,10 +1,22 @@
 const beep = new Audio("./sounds/beep.mp3")
+beep.volume=0.7;
 const cork = new Audio("./sounds/cork.mp3")
+cork.volume=1;
+let timer = null
+let audioOn = false;
 
+document.getElementById("audioButton").onclick=function(){
+    audioOn = true;
+    beep.play()
+}
 
-function runTimer(){
+document.getElementById("muteButton").onclick=function(){
+    audioOn = false;
+}
+
+document.getElementById('timerStart').onclick=function(){
     const setDate = new Date().getTime() + 1000 * 60 * 60;
-    const timer = setInterval(()=>{
+    timer = setInterval(()=>{
         const currentTime= new Date().getTime()
         const difference = setDate - currentTime;
         const minutes = difference % (1000*60*60)/(1000*60);
@@ -22,26 +34,20 @@ function runTimer(){
         secsAContainer.innerHTML = secsA
         secsBContainer.innerHTML = secsB
         
-        if(secsA == 5 && secsB == 3){
-            playBeep();
-            console.log("3")
+        if(audioOn==true){
+            if(secsA==0){
+                if(secsB == 3 || secsB == 2 || secsB == 1){
+                    console.log("Beep")
+                    beep.play();
+                }
+                else if(secsB == 0){
+                    console.log("DRINK")
+                    cork.play();
+                }
+                else{}
+            }
         }
-        
-        if(secsA == 5 && secsB == 2){
-            playBeep();
-            console.log("2")
-        }
-        
-        if(secsA== 5 && secsB== 1){
-            playBeep();
-            console.log("1")
-        }
-        
-        if(secsA== 5 && secsB== 0){
-            popCork();
-            console.log("DRINK")
-        }
-        
+        else{}
         if(difference < 0){
             document.getElementById("endMsg").innerHTML = "The hour is up! Go be Rowdy :)"
             minsAContainer.innerHTML=0
@@ -51,14 +57,8 @@ function runTimer(){
             clearInterval(timer)
         }
     },1000)
+};
+
+document.getElementById("timerStop").onclick=function(){
+    location.reload()
 }
-
-function playBeep(){
-    beep.play
-}
-
-function popCork(){
-}
-
-document.getElementById('timerStart').onclick=runTimer;
-
