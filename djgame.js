@@ -141,10 +141,10 @@ function nextPlayer(){
     displayPlayers()
     if(busted==true){
         if(score1 > djTarget){
-            alert(allPlayers[turn]+" bust with "+score1+ " which means they drink "+(2*(score1-djTarget))+"!")
+            alert(allPlayers[turn]+" bust with "+score1+ " which means they drink "+(score1-djTarget)+"!")
         }
         else{
-            alert(allPlayers[turn+1]+" bust with "+score2+ " which means they drink "+(2*(score2-djTarget))+"!")
+            alert(allPlayers[turn+1]+" bust with "+score2+ " which means they drink "+(score2-djTarget)+"!")
         }
         canRoll=false
         busted=false;
