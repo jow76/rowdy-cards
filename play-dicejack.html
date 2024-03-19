@@ -13,7 +13,7 @@
     <header>
         <section id="headerTitle">
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
-            <h1>ROWDY BOYS</h1>
+            <h1>DICEJACK</h1>
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
         </section>
         <nav>
@@ -25,20 +25,26 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="indexSection">
-            <div class="indexDiv">
-                <h2>Welcome, brother</h2>
-                <p>This is the placeholder home page for the WIP Rowdy Boys site! Currently, there is a functional drinking game called Rowdy Cards and a simple Power Hour timer.</a>!</p>
-                <p>I plan to add to this site overtime. I'm still quite new to web development so bare with :)</p>
-            </div>
-            <div class="indexDiv">
-                <h3>About Us</h3>
-                <p>I don't really know what Rowdy Boys is so here's a picture of a cabbit instead:</p>
-            </div>
+    <main id="djMain">
+        <section id="displayCurrentPlayer">
+            <h4>Current players:</h4>
+            <ul id="gamePlayers"></ul>
+            <li id="currentPlayer1">None</li>
+            <li id="currentPlayer2"></li>
+            <li id="currentTurn"></li>
         </section>
-        <img id="cabbitImg" src="images/cabbit.jpg" alt="An awesome Cabbit">
+        <section id="diceButton2">
+            <h4 id="totalRollHeader">Target:</h4>
+            <h4 id="targetRoll"></h4>
+            <img src="dice/1.png" alt="6-sided dice" id="diceImage1" class="djDice">
+            <img src="dice/1.png" alt="6-sided dice" id="diceImage2" class="djDice">
+            <h4 id="totalRollHeader">Total rolled amount:</h4>
+            <h4 id="totalRoll">0</h4>
+            <button id="rollButton">Roll</button>
+            <button id="nextPlayerButton">End Turn</button>
+        </section>
     </main>
+    <script src="djgame.js"></script>
     <footer>
         <p>&#169 Rowdy Boys 2023</p>
     </footer>

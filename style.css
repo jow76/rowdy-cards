@@ -709,3 +709,87 @@ h2{
 #timerMiddle{
     margin-top: 1rem;
 }
+
+#djMain{
+    width:100%;
+    margin: 0 auto;
+    align-content: center;
+}
+
+#diceButton2{
+    width:100%;
+    margin:0 auto;
+    display:block;
+    align-content:center;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    width:100vb;
+}
+
+
+#diceButton2 #totalRollHeader{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: 100;
+    border-radius: 0;
+    
+}
+
+#diceButton2 #totalRoll{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: 100;
+    border-radius: 0;
+    margin: 1rem 0;
+}
+
+#diceButton2 #targetRoll{
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: 100;
+    border-radius: 0;
+    margin: 1rem 0;
+
+}
+
+#diceButton2 button{
+    margin: 0.5rem 1rem;
+    display: inline;
+    height:fit-content;
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#diceButton2 img{
+    margin: 2rem 2rem;
+    display: inline;
+    width: 15%;
+    height: auto;
+    min-width: 70px;
+    max-width: 200px;
+}
+
+#notice{
+    display: block;
+    margin: 0 auto;
+    user-select: none;
+}
+
+#notice p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: transparent;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+    max-width: 800px;
+    color:black
+}

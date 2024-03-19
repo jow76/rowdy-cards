@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rowdy Cards</title>
+    <title>Dicejack</title>
     <meta name="description" content="Start the night off right with Rowdy Cards!">
     <link rel="icon" type="image/x-icon" href="images/ROWDYBOYS.png">
     <link rel="stylesheet" href="reset.css">
@@ -13,7 +13,7 @@
     <header>
         <section id="headerTitle">
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
-            <h1>ROWDY CARDS</h1>
+            <h1>DICEJACK</h1>
             <img class="logo" id="logo1" src="images/ROWDYBOYS.png" alt="Rowdy Boys Logo">
         </section>
         <nav>
@@ -30,8 +30,8 @@
             <form id="playerForm">
                 <fieldset>
                     <legend>Add New Players</legend>
-                    <label for="playerNameInput">Player Name</label>
-                    <input type="text" name="playerName" id="playerNameInput">
+                    <label for="playerNameInput2">Player Name</label>
+                    <input type="text" name="playerName" id="playerNameInput2">
                 </fieldset>
                 <button type="submit" id="submitButton">Add Player</button>
             </form>
@@ -43,25 +43,19 @@
             <ul id="playersUl"></ul>
         </div>
         <div>
-            <button id="clearPlayers" onclick="clearPlayers()">Clear all players</button>
+            <button id="clearPlayers" onclick="clearPlayers2()">Clear all players</button>
         </div>
         <div>
-            <a href="play-game.html" id="startButton">START GAME</a>
+            <a href="play-dicejack.html" id="startButton">START GAME</a>
         </div>
-        <section id="houseRules">
-            <h3>House Rules</h3>
-            <p>Generally, this is a drinking game designed for fun - so feel free to bend or ignore the rules as you see fit. These rules are just guidelines based off what we do when things don't go smoothly:</p>
-            <ol>
-                <li>1. If you have to drink a decimal number, round it up. You're here to get drunk, after all.</li>
-                <li>2. If a vote ends with a draw, it can be decided with a coin flip.</li>
-                <li>3. An empty drink is just a full drink that has not been poured yet, as said in the Bible probably. Therefore, if you have to down an empty drink, you must pour a whole drink first.</li>
-                <li>4. It's perfectly fine (even encouraged) to drink between turns.</li>
-            </ol>
-        </section>
-    </main>
-    <footer>
-        <p>&#169 Rowdy Boys 2023</p>
-    </footer>
-    <script src="script.js"></script>
+        <div id="notice">
+            <h3>Notice:</h3>
+            <p>This is very much a work in progress and is very incomplete, ugly and probably buggy. I haven't coded in almost a year and was never that good in the first place, so bare with while I sort this out and don't expect it to ever be completed.</p>
+            <p>Right now you're only really supposed to play with 2 players. I'm tryna work out a way to work in a King-of-the-Hill system to player order, but for now it's quite scuffed with any more than 2 players.</p>
+            <p>Also, make sure you have pop-ups enabled. Most of this game's feedback is through alerts right now. I know that sucks but I'm pretty confident I can do it properly with a bit more time. Anyway, hope you have fun and remember to stay Rowdy :)</p>
+        </div>
+        <footer>
+            <p>&#169 Rowdy Boys 2023</p>
+        </footer>
+        <script src="dicejack.js"></script>
 </body>
-</html>

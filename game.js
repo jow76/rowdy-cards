@@ -57,7 +57,7 @@ generateDeck()
 
 function handleClick(event){
     if(allPlayers.length == 0){
-        alert("Please add at least 1 player on the Home page to play.")
+        alert("Please add at least 1 player on the previous page to play.")
     }
     else{
         if(drawn.length === allCards.length){
