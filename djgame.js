@@ -13,7 +13,7 @@ let difference = 0;
 checkLocalStorage();
 
 function checkLocalStorage(){
-    const playerList = JSON.parse(localStorage.getItem("players"))
+    const playerList = JSON.parse(localStorage.getItem("djPlayers"))
     for(let i=0; i < playerList.length; i++){
         allPlayers.push(playerList[i])
     }

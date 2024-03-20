@@ -1,60 +1,60 @@
 "use strict"
 
-const allPlayers = [];
-const playerForm = document.getElementById("playerForm");
+const allDJPlayers = [];
+const djPlayerForm = document.getElementById("playerForm");
 
 checkLocalStorage();
 initialisePlayers();
 
-playerForm.addEventListener("submit", function (event){
+djPlayerForm.addEventListener("submit", function (event){
     event.preventDefault()
-    const newPlayer = event.target.playerName.value;
-    if(newPlayer == ""){
+    const newDJPlayer = event.target.playerName.value;
+    if(newDJPlayer == ""){
         alert("Please enter a name")
     }
     else{
-        allPlayers.push(newPlayer)
+        allDJPlayers.push(newDJPlayer)
         setLocalStorage()
         renderPlayers()
-        playerForm.reset()
+        djPlayerForm.reset()
     }
 })
 
 
 
 function setLocalStorage(){
-    localStorage.setItem("players", JSON.stringify(allPlayers))
+    localStorage.setItem("djPlayers", JSON.stringify(allDJPlayers))
 }
 
 function checkLocalStorage(){
-    const playerList = JSON.parse(localStorage.getItem("players"))
+    const playerList = JSON.parse(localStorage.getItem("djPlayers"))
     if(playerList != null){
         for(let i=0; i < playerList.length; i++){
-            allPlayers.push(playerList[i])
+            allDJPlayers.push(playerList[i])
         }
     }
     else{}
 }
 
 function initialisePlayers(){
-    const shownList = document.getElementById("playersUl") 
-    for(let i=0; i < allPlayers.length; i++){
+    const shownList = document.getElementById("djPlayersUl") 
+    for(let i=0; i < allDJPlayers.length; i++){
         const li = document.createElement("li")
-        li.textContent = allPlayers[i]
+        li.textContent = allDJPlayers[i]
         shownList.appendChild(li)
     }
 }
 
 function renderPlayers(){
-    const shownList = document.getElementById("playersUl") 
+    const shownList = document.getElementById("djPlayersUl") 
     const li = document.createElement("li")
-    li.textContent = allPlayers.slice(-1)
+    li.textContent = allDJPlayers.slice(-1)
     shownList.appendChild(li)
 }
 
 function clearPlayers2(){
-    allPlayers.length=0;
+    allDJPlayers.length=0;
     setLocalStorage()
     location.reload()
-    return allPlayers;
+    return allDJPlayers;
 }
