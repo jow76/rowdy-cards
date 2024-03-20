@@ -816,6 +816,21 @@ h2{
     color:black
 }
 
+#notice ul{
+    display:block;
+}
+
+#notice li{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: transparent;
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+    max-width: 800px;
+    color:black;
+    display:block
+}
+
 #dicejackRulesHeader{
     margin: 2rem 0 0 0;
     font-size: 1.5rem;
