@@ -22,7 +22,7 @@ header{
     display: flex;
     flex-shrink: inherit;
     width:100%;
-    max-width: 50vw;
+    max-width: 30vw;
     margin: 0 auto;
     justify-content: center;
 }
@@ -58,9 +58,8 @@ h4{
 
 .logo{
     display: grid;
-    max-width: 100px;
-    max-width:20vw;
-    max-height: 100px;
+    max-width:15%;
+    max-height: 15%;
     margin: 1rem;
 }
 

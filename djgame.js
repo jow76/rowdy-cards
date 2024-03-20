@@ -10,6 +10,16 @@ let playerNumber=1;
 let busted=false;
 let dicejack=false;
 let difference = 0;
+let is2Player = false;
+let isKing = false;
+let oddOrder = true;
+let player1 = ("");
+let player2 = ("");
+let prevWinner = 0;
+let isDraw=false;
+let combo = false;
+let reset = false;
+
 checkLocalStorage();
 
 function checkLocalStorage(){
@@ -26,28 +36,75 @@ function clear(parent){
 }
 
 function updateList(){
+    if(allPlayers.length == 2){
+        is2Player = true
+    }
+    else if(allPlayers.length > 2){
+        isKing = true
+    }
+    else{
+        alert("Please add at least 2 players for the game to work properly.")
+    }
     const shownList = document.getElementById("gamePlayers")
     const li1 = document.getElementById("currentPlayer1")
     const li2 = document.getElementById("currentPlayer2")
-    li1.textContent=(allPlayers[turn]+": "+ score1)
-    li2.textContent=(allPlayers[turn+1]+": "+score2)
+    if(is2Player == true){
+        if(oddOrder == true){
+            player1=allPlayers[turn]
+            player2 = allPlayers[turn+1]
+            li1.textContent=(player1+": "+ score1)
+            li2.textContent=(player2+": "+score2)
+            oddOrder=false
+        }
+        else{
+            player1=allPlayers[turn+1]
+            player2 = allPlayers[turn]
+            li1.textContent=(player1+": "+ score1)
+            li2.textContent=(player2+": "+score2)
+            oddOrder=true
+        }
+    }
+    else if(isKing == true){
+        if(isDraw==true){
+            player1=allPlayers[turn+1]
+            player2=allPlayers[turn+2]
+            li1.textContent=(player1+": "+ score1)
+            li2.textContent=(player2+": "+score2)
+        }
+        else{
+            if(combo==false){
+                player1=allPlayers[prevWinner]
+            }
+            if(turn==0){
+                player2=allPlayers[turn]
+                if(player1==player2){
+                    player2=allPlayers[turn+1]
+                }
+            }
+            else{
+                player2=allPlayers[turn+1]
+                if(player1==player2){
+                    player2=allPlayers[turn+2]
+                }
+            }
+            li1.textContent=(player1+": "+ score1)
+            li2.textContent=(player2+": "+score2)
+        }
+    }
+    else{
+        alert("Something went wrong selecting players.")
+    }
     shownList.appendChild(li1)
 }
 
 function displayPlayers(){
-    if(allPlayers.length < 2){
-        alert("Please add at least 2 players on the previous page to play.")
+    const shownList = document.getElementById("gamePlayers")
+    if(shownList.firstChildElement == null){
+        updateList();
     }
     else{
-        const shownList = document.getElementById("gamePlayers")
-            const li1 = document.getElementById("li")
-            if(shownList.firstChildElement == null){
-                updateList();
-            }
-            else{
-                clear(shownList)
-                updateList();
-            }
+        clear(shownList)
+        updateList();
     }
 }
 
@@ -116,10 +173,17 @@ function newGame(){
     playerNumber=1
     totalRoll.textContent=(turnTotal)
     if(turn < playerLoop){
-        turn++
+        if(reset==false){
+            if(reset==false){
+            turn++
+            }
+            else{
+                reset=false
+            }
+        }
     }
     else{
-        turn = 0
+        turn = -1
     }
     displayPlayers()
     initialRoll()
@@ -141,20 +205,36 @@ function nextPlayer(){
     displayPlayers()
     if(busted==true){
         if(score1 > djTarget){
-            alert(allPlayers[turn]+" bust with "+score1+ " which means they drink "+(score1-djTarget)+"!")
+            alert(player1+" bust with "+score1+ " which means they drink "+(score1-djTarget)+"!")
+            if(isKing == true){
+                prevWinner=(turn+1)
+                combo = false
+            }
         }
         else{
-            alert(allPlayers[turn+1]+" bust with "+score2+ " which means they drink "+(score2-djTarget)+"!")
+            alert(player2+" bust with "+score2+ " which means they drink "+(score2-djTarget)+"!")
+            if(isKing == true && combo == false){
+                prevWinner=(turn)
+                combo = true
+            }
         }
         canRoll=false
         busted=false;
     }
     else if(dicejack==true){
-        if(score1===djTarget){
-            alert(allPlayers[turn]+" got Dicejack with "+score1+ " which means "+allPlayers[turn+1]+" drinks "+(djRoll)+"!")
+        if(score1==djTarget){
+            alert(player1+" got Dicejack with "+score1+ " which means "+player2+" drinks "+(djRoll)+"!")
+            if(isKing == true && combo == false){
+                prevWinner=turn
+                combo = true
+            }
         }
         else{
-            alert(allPlayers[turn+1]+" got Dicejack with "+score2+ " which means "+allPlayers[turn]+" drinks "+(djRoll)+"!")
+            alert(player2+" got Dicejack with "+score2+ " which means "+player1+" drinks "+(djRoll)+"!")
+            if(isKing == true){
+                prevWinner=(turn+1)
+                combo = false
+            }
         }
         canRoll=false
         dicejack=false;
@@ -162,17 +242,29 @@ function nextPlayer(){
     else if (canRoll==false){
         if(score1 > score2){
             difference = (score1-score2)
-            alert(allPlayers[turn]+" scored " +difference+" more than "+allPlayers[turn+1]+" so "+allPlayers[turn+1]+" drinks "+difference+"!")
+            alert(player1+" scored " +difference+" more than "+player2+" so "+player2+" drinks "+difference+"!")
+            if(isKing == true && combo == false){
+                prevWinner=turn
+                combo = true
+            }
         }
         else if(score1 < score2){
             difference = (score2-score1)
-            alert(allPlayers[turn+1]+" scored " +difference+" more than "+allPlayers[turn]+" so "+allPlayers[turn]+ " drinks "+difference+"!")
+            alert(player2+" scored " +difference+" more than "+player1+" so "+player1+ " drinks "+difference+"!")
+            if(isKing == true){
+                prevWinner=(turn+1)
+                combo = false
+            }
         }
         else if(score1 == score2){
             alert("Both players drew so they each drink "+(djTarget-score1)+"!")
+            isDraw=true
+            combo=false
         }
         else{
             alert("Something went wrong! Oh well, have a drink each and carry on!")
+            isDraw=true
+            combo = false
         }
         canRoll=false
     }
