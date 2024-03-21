@@ -18,7 +18,6 @@ let player2 = ("");
 let prevWinner = 0;
 let isDraw=false;
 let combo = false;
-let reset = false;
 
 checkLocalStorage();
 
@@ -173,17 +172,10 @@ function newGame(){
     playerNumber=1
     totalRoll.textContent=(turnTotal)
     if(turn < playerLoop){
-        if(reset==false){
-            if(reset==false){
-            turn++
-            }
-            else{
-                reset=false
-            }
-        }
+        turn++
     }
     else{
-        turn = -1
+        turn = 0
     }
     displayPlayers()
     initialRoll()
@@ -225,7 +217,7 @@ function nextPlayer(){
         if(score1==djTarget){
             alert(player1+" got Dicejack with "+score1+ " which means "+player2+" drinks "+(djRoll)+"!")
             if(isKing == true && combo == false){
-                prevWinner=turn
+                prevWinner=(turn)
                 combo = true
             }
         }
@@ -244,7 +236,7 @@ function nextPlayer(){
             difference = (score1-score2)
             alert(player1+" scored " +difference+" more than "+player2+" so "+player2+" drinks "+difference+"!")
             if(isKing == true && combo == false){
-                prevWinner=turn
+                prevWinner=(turn)
                 combo = true
             }
         }
