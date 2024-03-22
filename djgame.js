@@ -73,7 +73,6 @@ function updateList(){
             }
             li1.textContent=(player1+": "+ score1)
             li2.textContent=(player2+": "+score2)
-            isDraw=false
         }
         else{
             if(combo==false){
@@ -163,6 +162,7 @@ function diceRoll(){
 }
 
 function newGame(){
+    isDraw=false
     score1=0
     score2=0
     turnTotal=0
