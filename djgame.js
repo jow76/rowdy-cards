@@ -19,6 +19,7 @@ let player2 = ("");
 let prevWinner = 0;
 let isDraw=false;
 let combo = false;
+let playerLoop = 0
 
 checkLocalStorage();
 
@@ -29,8 +30,6 @@ function checkLocalStorage(){
     }
 }
 
-const playerLoop = allPlayers.length - 1
-
 function clear(parent){
     parent.firstElementChild.remove();
 }
@@ -38,9 +37,11 @@ function clear(parent){
 function updateList(){
     if(allPlayers.length == 2){
         is2Player = true
+        playerLoop = allPlayers.length - 2
     }
     else if(allPlayers.length > 2){
         isKing = true
+        playerLoop = allPlayers.length - 1
     }
     else{
         alert("Please add at least 2 players for the game to work properly.")
