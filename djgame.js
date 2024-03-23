@@ -34,6 +34,25 @@ function clear(parent){
     parent.firstElementChild.remove();
 }
 
+function incTurn(){
+    if(turn < playerLoop){
+        turn++
+    }
+    else{
+        turn = 0
+    }
+}
+
+function incTurn2(){
+    if(turn2 < playerLoop){
+        turn2++
+    }
+    else{
+        turn2=0;
+    }
+}
+
+
 function updateList(){
     if(allPlayers.length == 2){
         is2Player = true
@@ -70,7 +89,8 @@ function updateList(){
             player1=allPlayers[turn]
             player2=allPlayers[turn2]
             if(player1==player2){
-                player2=allPlayers[turn2+1]
+                incTurn2()
+                player2=allPlayers[turn2]
             }
             li1.textContent=(player1+": "+ score1)
             li2.textContent=(player2+": "+score2)
@@ -81,7 +101,8 @@ function updateList(){
             }
             player2=allPlayers[turn2]
             if(player1==player2){
-                player2=allPlayers[turn2+1]
+                incTurn2()
+                player2=allPlayers[turn2]
             }
             li1.textContent=(player1+": "+ score1)
             li2.textContent=(player2+": "+score2)
@@ -169,18 +190,8 @@ function newGame(){
     turnTotal=0
     playerNumber=1
     totalRoll.textContent=(turnTotal)
-    if(turn < playerLoop){
-        turn++
-    }
-    else{
-        turn = 0
-    }
-    if(turn2 < playerLoop){
-        turn2++
-    }
-    else{
-        turn2=0;
-    }
+    incTurn()
+    incTurn2()
     displayPlayers()
     initialRoll()
 }
@@ -261,18 +272,8 @@ function nextPlayer(){
             alert("Something went wrong! Oh well, have a drink each and carry on!")
             isDraw=true
             combo = false
-            if(turn < playerLoop){
-                turn++
-            }
-            else{
-                turn = 0
-            }
-            if(turn2 < playerLoop){
-                turn2++
-            }
-            else{
-                turn2=0;
-            }
+            incTurn()
+            incTurn2()
         }
         canRoll=false
     }
