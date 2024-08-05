@@ -60,7 +60,7 @@ function updateList(){
     }
     else if(allPlayers.length > 2){
         isKing = true
-        playerLoop = allPlayers.length - 1
+        // = allPlayers.length - 1
     }
     else{
         alert("Please add at least 2 players for the game to work properly.")
